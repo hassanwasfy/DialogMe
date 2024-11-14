@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default text for buttons -->
+    <string name="dialogme_yes">نعم</string>
+    <string name="dialogme_no">لا</string>
+    <string name="dialogme_cancel">إلغاء</string>
+    <string name="dialogme_ok">تم</string>
+
+    <!-- Placeholder strings -->
+    <string name="dialogme_default_title">العنوان</string>
+    <string name="dialogme_default_message">الرسالة الافتراضية.</string>
+</resources>

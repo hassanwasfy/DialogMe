@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default text for buttons -->
+    <string name="dialogme_yes">Yes</string>
+    <string name="dialogme_no">No</string>
+    <string name="dialogme_cancel">Cancel</string>
+    <string name="dialogme_ok">OK</string>
+
+    <!-- Placeholder strings -->
+    <string name="dialogme_default_title">Dialog Title</string>
+    <string name="dialogme_default_message">This is a default message.</string>
+</resources>
