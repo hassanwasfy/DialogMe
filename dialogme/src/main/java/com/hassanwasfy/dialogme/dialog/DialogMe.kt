@@ -189,6 +189,17 @@ class DialogMe(private val activity: Activity) {
     }
 
     /**
+     * Sets a custom animation style for the dialog's entrance and exit animations.
+     *
+     * @param styleResId The resource ID of the custom animation style.
+     * @return The `DialogMe` instance for chaining calls.
+     */
+    fun setAnimationStyle(styleResId: Int): DialogMe {
+        dialog.window?.attributes?.windowAnimations = styleResId
+        return this
+    }
+
+    /**
      * Displays the dialog in an XML-based project.
      *
      * @throws IllegalStateException If called in a Compose-based project.
