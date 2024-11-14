@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default dialog background -->
+    <style name="DialogMeBackground">
+        <item name="android:background">@drawable/dialog_me_background</item>
+    </style>
+
+    <style name="DialogMeButton">
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:textColor">@color/dialogme_button_text</item>
+        <item name="android:backgroundTint">@color/dialogme_button_background</item>
+    </style>
+
+    <style name="DialogMeButton.Pressed">
+        <item name="android:backgroundTint">@color/dialogme_button_background_pressed</item>
+    </style>
+
+    <style name="DialogMeAnimation">
+        <item name="android:windowEnterAnimation">@anim/scale_up</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+</resources>
