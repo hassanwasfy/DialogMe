@@ -6,10 +6,11 @@ plugins {
 
 android {
     namespace = "com.hassanwasfy.dialogme"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
+        targetSdk = 35
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -31,6 +32,12 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
+    }
 }
 
 dependencies {
@@ -47,7 +54,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.compose)
 }
 
-// Generate sources JAR
 tasks.register<Jar>("sourcesJar") {
     archiveClassifier.set("sources")
     from(android.sourceSets["main"].java.srcDirs)
@@ -65,14 +71,23 @@ publishing {
             artifactId = "dialogme"
             version = "1.0.0"
 
-            // Add the AAR artifact
             afterEvaluate {
-                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+                artifact(file("$buildDir/outputs/aar/dialogme-release.aar"))
             }
 
-            // Add sources and Javadoc artifacts
             artifact(tasks.getByName("sourcesJar"))
             artifact(tasks.getByName("javadocJar"))
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/hassanwasfy/DialogMe")
+            credentials {
+                username = System.getenv("GITHUB_USERNAME")
+                password = System.getenv("GITHUB_TOKEN")
+            }
         }
     }
 }
